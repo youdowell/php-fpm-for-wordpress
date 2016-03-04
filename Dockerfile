@@ -27,7 +27,15 @@ RUN pecl install imagick-beta && \
   echo "extension=imagick.so" >> "$PHP_INI_DIR/conf.d/ext-imagick.ini" &&  \  
   echo "date.timezone=UTC" >> "$PHP_INI_DIR/conf.d/timezone.ini"
     
-## Configure Opcache
+# PhpRedis
+ENV PHPREDIS_VERSION php7
+RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/$PHPREDIS_VERSION.tar.gz \
+    && tar xfz /tmp/redis.tar.gz \
+    && rm -r /tmp/redis.tar.gz \
+    && mv phpredis-$PHPREDIS_VERSION /usr/src/php/ext/redis \
+    && docker-php-ext-install redis
+
+# Configure Opcache
 RUN ( \
     echo "opcache.memory_consumption=128"; \
     echo "opcache.interned_strings_buffer=8"; \
