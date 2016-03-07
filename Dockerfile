@@ -1,6 +1,6 @@
 #
 # PHP7-FPM + extras for Wordpress
-# Libs: GD, ImageMagick, opcache, mysqli  
+# Libs: GD, ImageMagick, opcache, mysqli, iconv  
 #
 # Copyright (c) 2016 Youdowell AG - All rights reserved 
 #
@@ -19,7 +19,7 @@ RUN apt-get install --no-install-recommends -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/lib --with-jpeg-dir=/usr/lib \
-	&& docker-php-ext-install gd mbstring mysqli zip opcache bcmath sockets intl mcrypt
+	&& docker-php-ext-install gd iconv mbstring mysqli zip opcache bcmath sockets intl mcrypt
 
 ENV PHP_INI_DIR /usr/local/etc/php
 
@@ -45,5 +45,4 @@ RUN ( \
     echo "opcache.enable_cli=1"; \
     ) > "$PHP_INI_DIR/conf.d/opcache-recommended.ini"
 
-VOLUME /var/www/html
 CMD ["php-fpm"]
