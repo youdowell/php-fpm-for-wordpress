@@ -19,7 +19,7 @@ RUN apt-get install --no-install-recommends -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/lib --with-jpeg-dir=/usr/lib \
-	&& docker-php-ext-install gd iconv mbstring mysqli zip opcache bcmath sockets intl mcrypt
+	&& docker-php-ext-install gd iconv mbstring mysqli zip opcache bcmath sockets intl mcrypt exif
 
 ENV PHP_INI_DIR /usr/local/etc/php
 
