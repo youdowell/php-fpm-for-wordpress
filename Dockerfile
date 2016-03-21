@@ -45,4 +45,6 @@ RUN ( \
     echo "opcache.enable_cli=1"; \
     ) > "$PHP_INI_DIR/conf.d/opcache-recommended.ini"
 
+COPY docker-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["php-fpm"]
