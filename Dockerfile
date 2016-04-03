@@ -13,7 +13,8 @@ RUN apt-get update --fix-missing && apt-get -y dist-upgrade
 # Install PHP extensions
 RUN apt-get install --no-install-recommends -y \
     libmcrypt-dev libicu52 libmcrypt4 \
-    libpng12-dev libjpeg-dev libpq-dev file re2c libicu-dev zlib1g-dev \
+    libpng12-dev libpq-dev file re2c libicu-dev zlib1g-dev \
+    gifsicle libjpeg-progs optipng \
     libmagickcore-dev libmagickwand-dev libmagick++-dev libjpeg-dev libpng12-dev \
     imagemagick xfonts-base xfonts-75dpi libfreetype6-dev \
 	&& rm -rf /var/lib/apt/lists/*
