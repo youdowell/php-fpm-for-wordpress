@@ -1,0 +1,25 @@
+{
+	"name": "@youdowell/php-fpm-for-wordpress",
+	"description": "PHP7-FPM Docker image for WordPress",
+	"version": "0.0.1",
+	"license": "ISC",
+	"author": "andrew.usov@youdowell.com <andrew.usov@youdowell.com>",
+	"homepage": "https://github.com/youdowell/php-fpm-for-wordpress",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/youdowell/php-fpm-for-wordpress.git"
+	},
+	"bugs": {
+		"url": "https://github.com/youdowell/php-fpm-for-wordpress/issues"
+	},
+	"keywords": [
+		"wordpress",
+		"php",
+		"fpm",
+		"docker"
+	],
+	"scripts": {
+		"postversion": "git push --tags"
+	}
+}

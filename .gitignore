@@ -1,1 +1,12 @@
-/.project
+# Build
+.settings/
+.project
+.DS_Store
+
+# Derrived
+/data/
+/build/
+/logs/
+/work/
+/tmp/
+npm-debug.log

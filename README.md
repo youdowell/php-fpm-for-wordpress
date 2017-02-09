@@ -1,13 +1,18 @@
 # Docker PHP7 for Wordpress
 
-[php:fpm]: https://hub.docker.com/_/php/
-[Wordpress]: https://wordpress.org/
+Example of Docker image based on official [php-fpm] for running [Wordpress] on PHP7. This image does *not* include [Wordpress] itself.
 
-**Note:** This repo is in active development.
+Libs in Alpine variant (~100 MB):
 
-Docker image based on official [php:fpm] and optimized for running [Wordpress] on PHP7. This image does *not* include [Wordpress] itself.
+* mysqli
+* phpredis
+* opcache
+* mcrypt
+* zip
+* gd
+* iconv
 
-Included:
+Libs in full variant (~800 MB):
 
 * mysqli
 * imagick
@@ -18,3 +23,6 @@ Included:
 * zip
 * gd
 * iconv
+
+[php-fpm]: https://hub.docker.com/_/php/
+[Wordpress]: https://wordpress.org/
